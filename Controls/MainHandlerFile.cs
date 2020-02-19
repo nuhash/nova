@@ -518,13 +518,19 @@ namespace ssi
         private void loadCSVSignalFile(string filename, Color signalColor, Color backgroundColor)
         {
             Signal signal = Signal.LoadCSVFile(filename);
+            uint d = signal.dim;
             if (signal != null && signal.loaded)
             {
-                this.control.signalbar.Height = new GridLength(control.signalAndAnnoGrid.ActualHeight / 2 - 30);
-                this.control.signalstatusbar.Visibility = Visibility.Visible;
-                signalCursor.signalLoaded = true;
-                annoCursor.signalLoaded = true;
-                addSignalTrack(signal, signalColor, backgroundColor);
+                for (int i = 0; i < d; i++)
+                {
+                    signal = Signal.LoadCSVFile(filename);
+                    signal.ShowDim = i;
+                    this.control.signalbar.Height = new GridLength(control.signalAndAnnoGrid.ActualHeight / 2 - 30);
+                    this.control.signalstatusbar.Visibility = Visibility.Visible;
+                    signalCursor.signalLoaded = true;
+                    annoCursor.signalLoaded = true;
+                    addSignalTrack(signal, signalColor, backgroundColor);
+                }
             }
         }
    

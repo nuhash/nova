@@ -65,11 +65,11 @@ namespace ssi
 
             try
             {
-                Type type = Type.UNDEF;
+                Type type = Type.FLOAT;
                 uint dim = 0;
-                double rate = 0;
+                double rate = 100;
 
-                if (SelectDataType(filepath, ref type, ref rate))
+                if (true)//SelectDataType(filepath, ref type, ref rate))
                 {
                     string[] lines = File.ReadAllLines(filepath);
 

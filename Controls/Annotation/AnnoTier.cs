@@ -1187,7 +1187,7 @@ namespace ssi
                                 FireOnMove(selectedLabel.Item.Start + (selectedLabel.Item.Stop - selectedLabel.Item.Start) * 0.5);
                             }
 
-                            if (Properties.Settings.Default.DefaultDiscreteSampleRate != 0)
+                            if (false)//Properties.Settings.Default.DefaultDiscreteSampleRate != 0)
                             {
                                 if (selectedLabel.Item.Start % (1 / Properties.Settings.Default.DefaultDiscreteSampleRate) != 0)
                                 {

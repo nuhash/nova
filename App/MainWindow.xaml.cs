@@ -134,5 +134,10 @@ namespace ssi
            
 
         }
+
+        private void View_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
